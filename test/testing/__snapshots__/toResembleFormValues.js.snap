@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fail for extra field 1`] = `
+"expect(FORM).toResembleFormValues({
+  \\"foo\\": \\"fooValue\\"
+})
+
+- Expected  -  1
++ Received  + 10
+
+- Object {}
++ Object {
++   \\"bar\\": null,
++   \\"baz\\": \\"fooValue\\",
++   \\"choice\\": Array [
++     \\"bar\\",
++     \\"baz\\",
++   ],
++   \\"choiceB[0]\\": \\"bar\\",
++   \\"choiceB[1]\\": \\"baz\\",
++ }"
+`;
+
+exports[`Fail for missing field 1`] = `
+"expect(FORM).toResembleFormValues({
+  \\"foo\\": \\"fooValue\\",
+  \\"bar\\": \\"\\",
+  \\"baz\\": \\"fooValue\\",
+  \\"choice\\": [
+    \\"bar\\",
+    \\"baz\\"
+  ],
+  \\"choiceB[0]\\": \\"bar\\",
+  \\"choiceB[1]\\": \\"baz\\",
+  \\"anotherField\\": \\"fooValue\\"
+})
+
+- Expected  - 3
++ Received  + 1
+
+- Object {
+-   \\"anotherField\\": \\"fooValue\\",
+- }
++ Object {}"
+`;
+
+exports[`Fail for wrong value 1`] = `
+"expect(FORM).toResembleFormValues({
+  \\"foo\\": \\"fooValue\\",
+  \\"bar\\": 0,
+  \\"baz\\": \\"fooValue\\",
+  \\"choice\\": [
+    \\"bar\\",
+    \\"baz\\"
+  ],
+  \\"choiceB[0]\\": \\"bar\\",
+  \\"choiceB[1]\\": \\"baz\\"
+})
+
+- Expected  - 1
++ Received  + 1
+
+  Object {
+-   \\"bar\\": 0,
++   \\"bar\\": null,
+  }"
+`;

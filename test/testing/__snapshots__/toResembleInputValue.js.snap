@@ -1,0 +1,162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Compare input values "<input type=\\"checkbox\\" checked/>" 1`] = `
+"expect(INPUT).toResembleInputValue(\\"foo\\")
+
+Expected: \\"foo\\"
+Received: true"
+`;
+
+exports[`Compare input values "<input type=\\"checkbox\\" value=\\"fooValue\\" checked/>" 1`] = `
+"expect(INPUT).toResembleInputValue(1)
+
+Expected: 1
+Received: \\"fooValue\\""
+`;
+
+exports[`Compare input values "<input type=\\"checkbox\\" value=\\"fooValue\\" checked/>" 2`] = `
+"expect(INPUT).toResembleInputValue(\\"true\\")
+
+Expected: \\"true\\"
+Received: \\"fooValue\\""
+`;
+
+exports[`Compare input values "<input type=\\"checkbox\\" value=\\"fooValue\\"/>" 1`] = `
+"expect(INPUT).toResembleInputValue(0)
+
+Expected: 0
+Received: undefined"
+`;
+
+exports[`Compare input values "<input type=\\"number\\" value=\\"\\"/>" 1`] = `
+"expect(INPUT).toResembleInputValue(0)
+
+Expected: 0
+Received: null"
+`;
+
+exports[`Compare input values "<input type=\\"number\\" value=\\"0\\"/>" 1`] = `
+"expect(INPUT).toResembleInputValue(null)
+
+Expected: null
+Received: 0"
+`;
+
+exports[`Compare input values "<input type=\\"number\\" value=\\"0\\"/>" 2`] = `
+"expect(INPUT).toResembleInputValue(undefined)
+
+Expected: undefined
+Received: 0"
+`;
+
+exports[`Compare input values "<input type=\\"number\\" value=\\"0\\"/>" 3`] = `
+"expect(INPUT).toResembleInputValue(\\"\\")
+
+Expected: \\"\\"
+Received: 0"
+`;
+
+exports[`Compare input values "<input type=\\"number\\" value=\\"1\\"/>" 1`] = `
+"expect(INPUT).toResembleInputValue(1.2)
+
+Expected: 1.2
+Received: 1"
+`;
+
+exports[`Compare input values "<input value=\\"\\"/>" 1`] = `
+"expect(INPUT).toResembleInputValue(\\"0\\")
+
+Expected: \\"0\\"
+Received: \\"\\""
+`;
+
+exports[`Compare input values "<input value=\\"\\"/>" 2`] = `
+"expect(INPUT).toResembleInputValue(0)
+
+Expected: 0
+Received: \\"\\""
+`;
+
+exports[`Compare input values "<input value=\\"0\\"/>" 1`] = `
+"expect(INPUT).toResembleInputValue(null)
+
+Expected: null
+Received: \\"0\\""
+`;
+
+exports[`Compare input values "<input value=\\"0\\"/>" 2`] = `
+"expect(INPUT).toResembleInputValue(undefined)
+
+Expected: undefined
+Received: \\"0\\""
+`;
+
+exports[`Compare input values "<input value=\\"0\\"/>" 3`] = `
+"expect(INPUT).toResembleInputValue([])
+
+Expected: []
+Received: \\"0\\""
+`;
+
+exports[`Compare input values "<input value=\\"1\\"/>" 1`] = `
+"expect(INPUT).toResembleInputValue(\\"foo\\")
+
+Expected: \\"foo\\"
+Received: \\"1\\""
+`;
+
+exports[`Compare input values "<input value=\\"fooValue\\"/>" 1`] = `
+"expect(INPUT).toResembleInputValue(1)
+
+Expected: 1
+Received: \\"fooValue\\""
+`;
+
+exports[`Compare input values "<select multiple></select>" 1`] = `
+"expect(SELECT).toResembleInputValue(0)
+
+Expected: 0
+Received: []"
+`;
+
+exports[`Compare input values "<select multiple><option selected>bar</option><option selected>baz</option></select>" 1`] = `
+"expect(SELECT).toResembleInputValue(1)
+
+Expected: 1
+Received: [\\"bar\\", \\"baz\\"]"
+`;
+
+exports[`Compare input values "<select><option selected>bar</option></select>" 1`] = `
+"expect(SELECT).toResembleInputValue([])
+
+Expected: []
+Received: \\"bar\\""
+`;
+
+exports[`Compare input values "<select><option selected>bar</option></select>" 2`] = `
+"expect(SELECT).toResembleInputValue(null)
+
+Expected: null
+Received: \\"bar\\""
+`;
+
+exports[`Compare input values "<select><option selected>bar</option></select>" 3`] = `
+"expect(SELECT).toResembleInputValue(undefined)
+
+Expected: undefined
+Received: \\"bar\\""
+`;
+
+exports[`Compare input values "<select><option selected>bar</option></select>" 4`] = `
+"expect(SELECT).toResembleInputValue(\\"\\")
+
+Expected: \\"\\"
+Received: \\"bar\\""
+`;
+
+exports[`Compare input values "<select><option selected>bar</option></select>" 5`] = `
+"expect(SELECT).toResembleInputValue(false)
+
+Expected: false
+Received: \\"bar\\""
+`;

@@ -1,0 +1,8 @@
+export { isShallowEqual } from './comparison/isShallowEqual'
+export { intervalFromString, Interval } from './date/interval'
+export { getIndicesOfDescendant } from './dom/indicesOfDescendant'
+export { useBoundFunction } from './react/boundFunction'
+export { useForkedCallback } from './react/forkedCallback'
+export { useForkedRef, updateRef } from './react/forkedRef'
+export { useId } from './react/id'
+export { isEscaped, countUnescaped, hasUnescaped, indexOfUnescaped } from './string/escaped'

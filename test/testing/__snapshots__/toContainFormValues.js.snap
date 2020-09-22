@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fail for missing field 1`] = `
+"expect(FORM).toContainFormValues({
+  \\"foo\\": \\"fooValue\\",
+  \\"bar\\": \\"barValue\\",
+  \\"baz\\": \\"bazValue\\"
+})
+
+- Expected  - 1
++ Received  + 0
+
+  Object {
+    \\"bar\\": \\"barValue\\",
+-   \\"baz\\": \\"bazValue\\",
+    \\"foo\\": \\"fooValue\\",
+  }"
+`;
+
+exports[`Fail for wrong value 1`] = `
+"expect(FORM).toContainFormValues({
+  \\"foo\\": \\"fooValue\\",
+  \\"bar\\": \\"bazValue\\"
+})
+
+- Expected  - 1
++ Received  + 1
+
+  Object {
+-   \\"bar\\": \\"bazValue\\",
++   \\"bar\\": \\"barValue\\",
+    \\"foo\\": \\"fooValue\\",
+  }"
+`;
