@@ -2,8 +2,12 @@ import { getInputValue } from './shared/getInputValue'
 import { resemblesFormValue } from './shared/resemblesFormValue'
 import { createExpectResultMessage } from './shared/createExpectResultMessage'
 
-export function toResembleInputValue(inputElement, expectedValue) {
-    const value = getInputValue(inputElement, toResembleInputValue, this)
+export function toResembleInputValue(
+    this: jest.MatcherContext,
+    inputElement: Element,
+    expectedValue: unknown,
+): jest.CustomMatcherResult {
+    const value = getInputValue(inputElement)
 
     return {
         pass: resemblesFormValue(expectedValue, value),

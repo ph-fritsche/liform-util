@@ -1,4 +1,4 @@
-import { intervalFromString, intervalToString } from '../../src/date/interval'
+import { intervalFromString, intervalToString, Interval } from '../../src/date/interval'
 
 const isoIntervals = [
     ['P12Y', { years: 12 }],
@@ -26,14 +26,14 @@ const signedIntervals = [
 it.each(isoIntervals)('ISO 8601 interval: %p', (str, expected) => {
     const interval = intervalFromString(str)
 
-    expect(interval).toEqual(expected)
+    expect(interval).toEqual(Object.assign(new Interval(), expected))
     expect(String(interval)).toBe(str)
 })
 
 it.each(signedIntervals)('Signed intervals: %p', (str, expected) => {
     const interval = intervalFromString(str)
 
-    expect(interval).toEqual(expected)
+    expect(interval).toEqual(Object.assign(new Interval(), expected))
     expect(String(interval)).toBe(str)
 })
 

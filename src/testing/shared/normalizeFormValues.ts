@@ -1,13 +1,21 @@
-export function normalizeFormValues(values) {
-    const normalized = {}
-    const length = {}
+export function normalizeFormValues<
+    T extends unknown
+>(
+    values: {key: string, value: T}[],
+): Record<string, T> {
+    const normalized: Record<string, T> = {}
+    const length: Record<string, number> = {}
 
     values.forEach(o => {
         let k = o.key
 
         const r = /\[(\d*)\]/g
-        let m
-        while ((m = r.exec(k))) {
+        for(;;) {
+            const m = r.exec(k)
+            if (!m) {
+                break
+            }
+
             const sub = k.substring(0, r.lastIndex - m[0].length)
 
             if (m[1] !== '') {

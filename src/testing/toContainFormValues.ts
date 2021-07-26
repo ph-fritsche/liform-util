@@ -2,7 +2,11 @@ import { getFormValues } from './shared/getFormValues'
 import { normalizeFormValues } from './shared/normalizeFormValues'
 import { createExpectResultMessage } from './shared/createExpectResultMessage'
 
-export function toContainFormValues(formElement, valueMap) {
+export function toContainFormValues(
+    this: jest.MatcherContext,
+    formElement: Element,
+    valueMap: Record<string, unknown>,
+): jest.CustomMatcherResult {
     const formValues = normalizeFormValues(getFormValues(formElement, toContainFormValues, this))
 
     return {
@@ -11,7 +15,7 @@ export function toContainFormValues(formElement, valueMap) {
             expected: valueMap,
             received: formElement,
             receivedDiff: () => {
-                const filtered = {}
+                const filtered: Partial<typeof valueMap> = {}
                 Object.keys(valueMap).forEach(k => {
                     if (Object.keys(formValues).includes(k)) {
                         filtered[k] = formValues[k]

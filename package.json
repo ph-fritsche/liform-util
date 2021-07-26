@@ -9,7 +9,8 @@
   "scripts": {
     "build": "babel src --out-dir dist",
     "lint": "eslint src test",
-    "test": "jest"
+    "test": "jest",
+    "dev": "jest --coverage false --watch"
   },
   "keywords": [
     "form",
@@ -20,20 +21,21 @@
   "author": "Philipp Fritsche",
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.14.8",
-    "@babel/core": "^7.14.8",
-    "@babel/preset-env": "^7.14.8",
-    "@babel/preset-react": "^7.14.5",
     "@ph.fritsche/eslint-config": "^0.1.1",
+    "@ph.fritsche/scripts-config": "^2.0.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "@types/react": "^17.0.15",
     "@types/testing-library__jest-dom": "^5.14.1",
     "eslint": "^7.31.0",
     "jest": "^27.0.6",
     "jest-snapshot-serializer-ansi": "^1.0.0",
     "react": "^17.0.2",
-    "react-test-renderer": "^17.0.2"
+    "react-test-renderer": "^17.0.2",
+    "shared-scripts": "^1.4.1",
+    "ts-jest": "^27.0.4",
+    "typescript": "^4.3.5"
   },
   "dependencies": {},
   "peerDependencies": {}

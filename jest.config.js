@@ -1,7 +1,7 @@
 module.exports = {
     collectCoverage: true,
     collectCoverageFrom: [
-        'src/**/*.{js,jsx}',
+        'src/**/*.{js,jsx,ts,tsx}',
     ],
     coveragePathIgnorePatterns: [],
     snapshotSerializers: [
@@ -10,12 +10,16 @@ module.exports = {
     setupFilesAfterEnv: [
     ],
     testMatch: [
-        '<rootDir>/test/**/*.{js,jsx}',
+        '<rootDir>/test/**/*.{js,jsx,ts,tsx}',
     ],
     testPathIgnorePatterns: [
         '/_.*(?<!.test.js)$',
     ],
+    transform: {
+        '\\.([tj]sx?)$': 'ts-jest',
+    },
     transformIgnorePatterns: [
+        '/node_modules/',
     ],
     verbose: true,
     testEnvironment: 'jsdom',

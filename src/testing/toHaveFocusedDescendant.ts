@@ -1,11 +1,11 @@
-import { checkHtmlElement } from '@testing-library/jest-dom/dist/utils'
 import { createExpectResultMessage } from './shared/createExpectResultMessage'
 
-export function toHaveFocusedDescendant(element) {
-    checkHtmlElement(element, toHaveFocusedDescendant, this)
-
+export function toHaveFocusedDescendant(
+    this: jest.MatcherContext,
+    element: Element,
+): jest.CustomMatcherResult {
     return {
-        pass: element.ownerDocument.activeElement && element.contains(element.ownerDocument.activeElement),
+        pass: Boolean(element.ownerDocument.activeElement && element.contains(element.ownerDocument.activeElement)),
         message: createExpectResultMessage(this, toHaveFocusedDescendant, {
             received: element,
             expectedStringify: () => element,

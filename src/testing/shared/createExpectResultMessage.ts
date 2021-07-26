@@ -1,3 +1,4 @@
+import { MatcherFn } from './import/GenericTypeError'
 
 /**
  * Create the callback for error message if a test fails
@@ -11,24 +12,38 @@
  *
  * @returns The message callback for the jest matcher result
  */
-export function createExpectResultMessage(expectContext, matcherFn, {
-    expected,
-    received,
-    expectedHint,
-    receivedHint,
-    expectedDiff,
-    receivedDiff,
-    expectedStringify,
-    receivedStringify,
-    printStringify = Boolean(expectedStringify || receivedStringify),
-}) {
-    return () => {
+export function createExpectResultMessage(
+    expectContext: jest.MatcherContext,
+    matcherFn: MatcherFn,
+    {
+        expected,
+        received,
+        expectedHint,
+        receivedHint,
+        expectedDiff,
+        receivedDiff,
+        expectedStringify,
+        receivedStringify,
+        printStringify = Boolean(expectedStringify || receivedStringify),
+    }: {
+        expected?: unknown,
+        received?: unknown,
+        expectedHint?: () => string,
+        receivedHint?: () => string,
+        expectedDiff?: () => unknown,
+        receivedDiff?: () => unknown,
+        expectedStringify?: () => unknown,
+        receivedStringify?: () => unknown,
+        printStringify?: boolean,
+    },
+) {
+    return (): string => {
         const hint = expectContext.utils.matcherHint(
             matcherFn.name,
-            receivedHint ? receivedHint() : (
+            receivedHint ? receivedHint() : String(
                 received instanceof HTMLElement
                     ? received.tagName
-                    : received
+                    : received,
             ),
             expectedHint ? expectedHint() : (
                 expected === undefined
@@ -50,6 +65,7 @@ export function createExpectResultMessage(expectContext, matcherFn, {
                 receivedDiff ? receivedDiff() : received,
                 'Expected',
                 'Received',
+                false,
             )
 
         return `${hint}\n\n${diff}`
