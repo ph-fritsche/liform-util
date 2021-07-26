@@ -1,21 +1,22 @@
 module.exports = {
-    "collectCoverage": true,
-    "collectCoverageFrom": [
-        "src/**/*.{js,jsx}"
+    collectCoverage: true,
+    collectCoverageFrom: [
+        'src/**/*.{js,jsx}',
     ],
-    "coveragePathIgnorePatterns": [],
-    "snapshotSerializers": [
-        "jest-snapshot-serializer-ansi"
+    coveragePathIgnorePatterns: [],
+    snapshotSerializers: [
+        'jest-snapshot-serializer-ansi',
     ],
-    "setupFilesAfterEnv": [
+    setupFilesAfterEnv: [
     ],
-    "testMatch": [
-        "<rootDir>/test/**/*.{js,jsx}",
+    testMatch: [
+        '<rootDir>/test/**/*.{js,jsx}',
     ],
-    "testPathIgnorePatterns": [
-        "/_.*(?<!.test.js)$",
+    testPathIgnorePatterns: [
+        '/_.*(?<!.test.js)$',
     ],
-    "transformIgnorePatterns": [
+    transformIgnorePatterns: [
     ],
-    "verbose": true,
+    verbose: true,
+    testEnvironment: 'jsdom',
 }
