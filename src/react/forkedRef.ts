@@ -3,7 +3,7 @@ import { MutableRefObject, RefCallback, useMemo } from 'react'
 export function updateRef<
     T extends unknown
 >(
-    ref: MutableRefObject<T> | RefCallback<T>,
+    ref: MutableRefObject<T> | RefCallback<T> | null,
     node: T,
 ): void {
     if (typeof (ref) === 'function') {
@@ -16,7 +16,7 @@ export function updateRef<
 export function forkRef<
     T extends unknown
 >(
-    ...ref: (MutableRefObject<T> | RefCallback<T>)[]
+    ...ref: (MutableRefObject<T|null> | RefCallback<T> | null)[]
 ): RefCallback<T> {
     return (node) => {
         for (const r of ref) {
@@ -28,7 +28,7 @@ export function forkRef<
 export function useForkedRef<
     T extends unknown
 >(
-    ...ref: (MutableRefObject<T> | RefCallback<T>)[]
+    ...ref: (MutableRefObject<T|null> | RefCallback<T> | null)[]
 ): RefCallback<T> {
     return useMemo(
         () => forkRef(...ref),
