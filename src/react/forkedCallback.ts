@@ -19,11 +19,11 @@ export function forkCallback<
 export function useForkedCallback<
     Args extends unknown[],
 >(
-    func: Callback<Args> | Callback<Args>[],
+    func: Callback<Args> | Callback<Args>[] | undefined,
     newFunc: Callback<Args>,
     deps: unknown[] = [],
 ): (...args: Args) => void {
-    const funcA = Array.isArray(func) ? func : [func]
+    const funcA = Array.isArray(func) ? func : func ? [func] : []
 
     return useMemo(
         () => forkCallback(...funcA, newFunc),
