@@ -2,14 +2,11 @@
   "name": "liform-util",
   "version": "0.0.0-semantic-release",
   "description": "Utils for react and forms",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/types/index.d.ts",
   "files": [
     "/dist"
   ],
   "scripts": {
-    "build": "scripts ts-build",
+    "build": "scripts ts-build2 --cjs",
     "lint": "eslint src test",
     "test": "jest",
     "dev": "jest --coverage false --watch"
@@ -41,5 +38,7 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {},
-  "peerDependencies": {}
+  "peerDependencies": {
+    "react": ">=17"
+  }
 }

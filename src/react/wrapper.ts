@@ -91,5 +91,5 @@ export function createForwardRefWrapper<
         ref: ComponentForwardRef<ComponentType>
     ) => React.ReactElement | null,
 ): ForwardRefWrapper<ComponentProp, AdditionalProps, PropertiesProp, ComponentType> {
-    return React.forwardRef(wrapper)
+    return React.forwardRef(wrapper) as ForwardRefWrapper<ComponentProp, AdditionalProps, PropertiesProp, ComponentType>
 }
