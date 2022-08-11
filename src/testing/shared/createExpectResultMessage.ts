@@ -59,7 +59,7 @@ export function createExpectResultMessage(
                 '  ' + expectContext.utils.printExpected(expectedStringify ? expectedStringify() : expected),
                 'Received',
                 '  ' + expectContext.utils.printReceived(receivedStringify ? receivedStringify() : received),
-            ]
+            ].join('\n')
             : expectContext.utils.printDiffOrStringify(
                 expectedDiff ? expectedDiff() : expected,
                 receivedDiff ? receivedDiff() : received,

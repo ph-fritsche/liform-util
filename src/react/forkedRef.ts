@@ -1,8 +1,6 @@
 import { MutableRefObject, RefCallback, useMemo } from 'react'
 
-export function updateRef<
-    T extends unknown
->(
+export function updateRef<T>(
     ref: MutableRefObject<T> | RefCallback<T> | null,
     node: T,
 ): void {
@@ -13,9 +11,7 @@ export function updateRef<
     }
 }
 
-export function forkRef<
-    T extends unknown
->(
+export function forkRef<T>(
     ...ref: (MutableRefObject<T|null> | RefCallback<T> | null)[]
 ): RefCallback<T> {
     return (node) => {
@@ -25,9 +21,7 @@ export function forkRef<
     }
 }
 
-export function useForkedRef<
-    T extends unknown
->(
+export function useForkedRef<T>(
     ...ref: (MutableRefObject<T|null> | RefCallback<T> | null)[]
 ): RefCallback<T> {
     return useMemo(

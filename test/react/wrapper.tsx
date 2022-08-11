@@ -1,3 +1,5 @@
+/* eslint-disable testing-library/await-async-query */
+
 import React from 'react'
 import reactTestRenderer from 'react-test-renderer'
 import { createForwardRefWrapper } from '../../src/react/wrapper'

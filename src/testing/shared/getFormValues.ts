@@ -29,7 +29,7 @@ export function getFormValues(
             const v = getInputValue(e)
             if (v !== undefined) {
                 if (Array.isArray(v) && e.getAttribute('name')?.includes('[]')) {
-                    values.push(...v.map(v_ => ({
+                    values.push(...v.map((v_: unknown) => ({
                         key: e.getAttribute('name') as string,
                         value: v_,
                     })))

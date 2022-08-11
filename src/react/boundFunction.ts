@@ -3,7 +3,7 @@ import { useMemo } from 'react'
 export function useBoundFunction<
     BindArgs extends readonly unknown[],
     MoreArgs extends unknown[],
-    Return extends unknown
+    Return
 >(
     func: (...args: [...BindArgs, ...MoreArgs]) => Return,
     ...bind: BindArgs

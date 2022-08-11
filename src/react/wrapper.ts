@@ -18,7 +18,7 @@ export type WrapperProps<
     /**
      * Additional properties for the wrapper.
      */
-    AdditionalProps extends unknown,
+    AdditionalProps,
     /**
      * The property key for properties passed down to the wrapped component.
      * `unknown` if properties of wrapper and wrapped are merged.
@@ -47,7 +47,7 @@ export interface ForwardRefWrapper<
     /**
      * Additional properties for the wrapper.
      */
-    AdditionalProps extends unknown = unknown,
+    AdditionalProps = unknown,
     /**
      * The property key for properties passed down to the wrapped component.
      * `unknown` if properties of wrapper and wrapped are merged.
@@ -75,7 +75,7 @@ export function createForwardRefWrapper<
     /**
      * Additional properties for the wrapper.
      */
-    AdditionalProps extends unknown = unknown,
+    AdditionalProps = unknown,
     /**
      * The property key for properties passed down to the wrapped component.
      * `unknown` if properties of wrapper and wrapped are merged.

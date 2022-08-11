@@ -13,7 +13,7 @@ export function filterObject<
         propDescriptor: PropertyDescriptor
     ) => boolean = v => v !== undefined,
 ): Partial<T> {
-    const filtered = Object.create(Object.getPrototypeOf(object))
+    const filtered = Object.create(Object.getPrototypeOf(object) as T) as T
 
     const props = Object.getOwnPropertyDescriptors(object)
     Object.keys(props).forEach((k: keyof T) => {

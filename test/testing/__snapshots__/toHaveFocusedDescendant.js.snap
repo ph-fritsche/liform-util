@@ -3,7 +3,10 @@
 exports[`Pass for active element and its parents 1`] = `
 "expect(DIV).toHaveFocusedDescendant(undefined)
 
-Expected,  <div id=\\"el2\\" tabindex=\\"0\\">
-    </div>,Received,  <div id=\\"el1\\" tabindex=\\"0\\">
+Expected
+  <div id=\\"el2\\" tabindex=\\"0\\">
+    </div>
+Received
+  <div id=\\"el1\\" tabindex=\\"0\\">
         </div>"
 `;

@@ -6,7 +6,7 @@ export function isShallowEqual(
         if (!Array.isArray(b) || a.length !== b.length) {
             return false
         }
-        for (const i in a) {
+        for (let i = 0; i < a.length; i++) {
             if (a[i] != b[i]) {
                 return false
             }
@@ -23,7 +23,7 @@ export function isShallowEqual(
         if (aKeys.length !== bKeys.length) {
             return false
         }
-        for (const i in aKeys) {
+        for (let i = 0; i < aKeys.length; i++) {
             if (a[aKeys[i] as keyof typeof a] != b[aKeys[i] as keyof typeof b]) {
                 return false
             }
