@@ -33,7 +33,7 @@ it('Fork refs', () => {
     let b = 'bar'
     const refB = v => { b = v }
 
-    const forkedRef = forkRef(refA, refB)
+    const forkedRef = forkRef(refA, undefined, null, refB)
 
     forkedRef('baz')
 
@@ -52,7 +52,7 @@ it('Use forked refs hook', () => {
     }
 
     const TestComponent = (props) => {
-        const forkedRef = useForkedRef(props.a, props.b)
+        const forkedRef = useForkedRef(props.a, undefined, null, props.b)
 
         props.setRef(forkedRef)
 
